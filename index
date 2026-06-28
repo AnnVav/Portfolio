@@ -51,16 +51,49 @@
       <div class="title">Éclosion</div>
     </div>
 
+    <div class="artwork right">
+      <img src="IMAGE5.jpg" alt="La Mer">
+      <div class="title">La Mer</div>
+    </div>
+
+    <div class="artwork left">
+      <img src="IMAGE6.jpg" alt="Le Silence">
+      <div class="title">Le Silence</div>
+    </div>
+
   </section>
 
-  <script>
-    const cursor = document.querySelector(".cursor");
+ <script>
+/* =========================
+   CURSOR (1 seule version)
+========================= */
+const cursor = document.querySelector(".cursor");
 
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-    });
-  </script>
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
 
+
+/* =========================
+   APPARITION AU SCROLL
+========================= */
+
+const artworks = document.querySelectorAll(".artwork");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+artworks.forEach(art => {
+  observer.observe(art);
+});
+</script>
 </body>
 </html>
