@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Annick Vavasseur | French Contemporary Painter</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font option (clean + elegant) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- CURSOR (optional) -->
+  <div class="cursor"></div>
+
+  <!-- HERO / FIRST VIEW -->
+  <section class="hero">
+
+    <!-- NAME (bottom right, 2 lines) -->
+    <h1 class="artist-name">
+      Annick<br>Vavasseur
+    </h1>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+
+    <div class="artwork center">
+      <img src="IMAGE1.jpg" alt="Les Coquelicots">
+      <div class="title">Les Coquelicots</div>
+    </div>
+
+    <div class="artwork right">
+      <img src="IMAGE2.jpg" alt="La Mer">
+      <div class="title">La Mer</div>
+    </div>
+
+    <div class="artwork left">
+      <img src="IMAGE3.jpg" alt="Le Silence">
+      <div class="title">Le Silence</div>
+    </div>
+
+    <div class="artwork center">
+      <img src="IMAGE4.jpg" alt="Éclosion">
+      <div class="title">Éclosion</div>
+    </div>
+
+  </section>
+
+  <script>
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+  </script>
+
+</body>
+</html>
