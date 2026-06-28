@@ -19,14 +19,15 @@
   <div class="cursor"></div>
 
   <!-- HERO / FIRST VIEW -->
-  <section class="hero">
+ <section class="hero">
 
-    <!-- NAME (bottom right, 2 lines) -->
-    <h1 class="artist-name">
-      Annick<br>Vavasseur
-    </h1>
+  <img class="hero-image" src="annick-vavasseur-le-present-2022" alt="Artwork">
 
-  </section>
+  <h1 class="artist-name">
+    Annick<br>Vavasseur
+  </h1>
+
+</section>
 
   <!-- GALLERY -->
   <section class="gallery">
