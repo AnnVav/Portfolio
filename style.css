@@ -1,0 +1,158 @@
+/* =========================
+   BASE
+========================= */
+
+:root {
+  --bg: #E7E2DA;
+  --text: #4A433D;
+  --text-soft: #746C65;
+  --line: #C9C2B8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CURSOR (OPTIONNEL)
+========================= */
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-soft);
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  z-index: 9999;
+}
+
+/* =========================
+   HERO (PAGE 1)
+========================= */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* NOM EN BAS DROITE */
+.artist-name {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  text-align: right;
+
+  color: var(--text);
+
+  /* zone de sécurité visuelle */
+  padding: 10px 14px;
+  background: rgba(231, 226, 218, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+/* =========================
+   GALLERY (SCROLL EXPO)
+========================= */
+
+.gallery {
+  width: 100%;
+}
+
+/* CHAQUE ŒUVRE = 1 ÉCRAN */
+.artwork {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+/* apparition au scroll */
+.artwork.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* IMAGE */
+.artwork img {
+  max-height: 75vh;
+  max-width: 85vw;
+  object-fit: contain;
+  display: block;
+}
+
+/* TITRE ŒUVRE */
+.title {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   VARIATIONS POSITIONNELLES
+   (léger rythme visuel)
+========================= */
+
+.artwork.left {
+  align-items: flex-start;
+  padding-left: 8vw;
+}
+
+.artwork.right {
+  align-items: flex-end;
+  padding-right: 8vw;
+}
+
+.artwork.center {
+  align-items: center;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .artist-name {
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.6rem;
+  }
+
+  .artwork img {
+    max-width: 92vw;
+    max-height: 70vh;
+  }
+
+  .artwork.left,
+  .artwork.right {
+    align-items: center;
+    padding: 0;
+  }
+}
